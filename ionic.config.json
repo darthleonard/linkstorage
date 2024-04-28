@@ -1,0 +1,7 @@
+{
+  "name": "linkstorage",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
