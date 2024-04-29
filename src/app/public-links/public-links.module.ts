@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PublicLinksPageRoutingModule } from './public-links-routing.module';
 
 import { PublicLinksPage } from './public-links.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PublicLinksPageRoutingModule
+    PublicLinksPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [PublicLinksPage]
 })
