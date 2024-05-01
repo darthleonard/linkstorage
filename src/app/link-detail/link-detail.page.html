@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Links</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="onSubmit()" #linkForm="ngForm">
+    <ion-item class="form-group">
+      <ion-input
+        class="form-control"
+        id="link"
+        name="link"
+        label="Link"
+        labelPlacement="floating"
+        required="true"
+        [(ngModel)]="appLink.link"
+      ></ion-input>
+    </ion-item>
+    <ion-item class="form-group">
+      <ion-input
+        class="form-control"
+        id="alias"
+        name="alias"
+        label="Alias"
+        labelPlacement="floating"
+        [(ngModel)]="appLink.alias"
+      ></ion-input>
+    </ion-item>
+    <ion-item class="form-group">
+      <ion-select
+        class="form-control"
+        id="category"
+        name="category"
+        label="Category"
+        label-placement="floating"
+        required="true"
+        [(ngModel)]="appLink.categoryId"
+      >
+        <ion-select-option
+          *ngFor="let category of categories"
+          [value]="category.id"
+          >{{category.name}}</ion-select-option
+        >
+      </ion-select>
+    </ion-item>
+    <ion-item class="form-group">
+      <ion-input
+        class="form-control"
+        id="notes"
+        name="notes"
+        label="Notes"
+        labelPlacement="floating"
+        [(ngModel)]="appLink.notes"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-button type="submit" [disabled]="!linkForm.form.valid">
+        Save
+      </ion-button>
+    </ion-item>
+  </form>
+</ion-content>

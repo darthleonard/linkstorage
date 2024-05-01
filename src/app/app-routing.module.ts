@@ -32,6 +32,10 @@ const routes: Routes = [
     loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule),
     canActivate: [authGuard]
   },
+  {
+    path: 'link-detail',
+    loadChildren: () => import('./link-detail/link-detail.module').then( m => m.LinkDetailPageModule)
+  },
 ];
 
 @NgModule({
